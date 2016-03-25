@@ -7,42 +7,48 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
 #include <iomanip> // include IO Manipulators to set field width
+#include "student.h"
 #ifndef process_h
 #define process_h
-#include "student.h"
 using namespace std;
 
 void readFile(){
+    int i, n;
+    struct student *s;
+    FILE *input;
+    input = fopen ("list2.txt", "r");
     
-    struct STUDENT data;    // use structure
+    cin >> n;
     
-    // start:
+    s = new struct student[n];
     
-    FILE *input = NULL;
-    input = fopen("list1.txt", "r");    //open the file (r: read only)
-    
-    cout << "Score Calculator Data: \n\n";
-    
-    while( fscanf( input, "%s", data.name )!=EOF ){ // EOF: end of file
-        fscanf( input, "%d", &(data.age) );
-        fscanf( input, "%d", &(data.score) );
-        
-        cout << data.name << setw(12) << data.age << setw(4) << data.score << endl;
+    if (input == NULL)
+    {
+        cout << "Couldn't open student file\n";
     }
-    
-    if((input = NULL)){
-        cout << "Failed to open the file."; // Error message
-        return;
+    for (i = 0; i < n; i++)
+    {
+        fscanf (input, "%79s %d %d %d %d", s[i].name, &s[i].age, &s[i].score1, &s[i].score2, &s[i].score3);
+        cout << i+1 << "  " << s[i].name << setw(4) << s[i].age << setw(4) << s[i].score1 << setw(4) << s[i].score2 << setw(4) << s[i].score3 << endl;
     }
-    
-    // exit:
     cout << "\n\n";
     fclose(input);
     system("PAUSE");
-    
 }
 
+/*
+ void sortFile(){
+ 
+ }
+ 
+ void printFile(){
+ 
+ }
+ */
+
 #endif /* process_h */
+

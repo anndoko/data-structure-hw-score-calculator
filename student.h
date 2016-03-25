@@ -11,11 +11,13 @@
 
 // structure of a student
 
-struct STUDENT
-{
+struct student{
     char name[80];
     int age;
-    int score;
+    int score1;
+    int score2;
+    int score3;
+    //float avg; //average
 };
 
 #endif /* student_h */
