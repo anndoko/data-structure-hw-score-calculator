@@ -1,15 +1,18 @@
 //
 //  main.cpp
-//  ScoreCalculator
+//  HomeworkStudentScore
 //
-//  Created by Yu-An Ko on 2016/3/26.
+//  Created by Yu-An Ko on 2016/3/25.
 //  Copyright © 2016年 Yu-An Ko. All rights reserved.
 //
 
 #include <iostream>
+#include "student.h"
+#include "process.h"
+void readFile();
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    readFile();
     return 0;
 }
+
