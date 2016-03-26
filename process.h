@@ -22,14 +22,19 @@ void readFile(){
     FILE *input;
     input = fopen ("list2.txt", "r");
     
-    cin >> n;
+    cout << "Number of student: "; // prompt
+    cin >> n; // n: number of students
     
     s = new struct student[n];
     
     if (input == NULL)
     {
-        cout << "Couldn't open student file\n";
+        cout << "Failed to open the file.\n";
     }
+    
+    // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
+    cout << "#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(8) << "AVG.\n" << endl;
+    
     for (i = 0; i < n; i++)
     {
         // input from a txt. file
@@ -39,7 +44,7 @@ void readFile(){
         s[i].avg = (s[i].score1 + s[i].score1 + s[i].score1) / 3;
         
         // print result
-        cout << i+1 << "  " << s[i].name << setw(4) << s[i].age << setw(4) << s[i].score1 << setw(4) << s[i].score2 << setw(4) << s[i].score3 << setw(4) << s[i].avg << endl;
+        cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(8) << s[i].avg << "\n" << endl;
     }
     cout << "\n\n";
     fclose(input);
