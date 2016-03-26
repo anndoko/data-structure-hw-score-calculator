@@ -16,11 +16,14 @@
 #include "process.h"
 #include "student.h"
 void readFile();
-void printResults();
+// void doAverage();
+// void doSorting();
+// void printResults();
 
 int main() {
     readFile();
-    printResults();
+    // doAverage();
+    // doSorting();
+    //printResults();
     return 0;
 }
-

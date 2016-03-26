@@ -26,7 +26,11 @@ void readFile(){
     cin >> n; // n: number of students
     
     s = new struct student[n];
-    
+
+/*
+--------------------READ FILE AND AVG.--------------------
+*/
+
     if (input == NULL)
     {
         cout << "Failed to open the file.\n";
@@ -34,6 +38,7 @@ void readFile(){
     
     // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
     cout << "#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(8) << "AVG.\n" << endl;
+
     
     for (i = 0; i < n; i++)
     {
@@ -42,18 +47,45 @@ void readFile(){
         
         // average
         s[i].avg = (s[i].score1 + s[i].score1 + s[i].score1) / 3;
-        
+
         // print results
         cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(8) << s[i].avg << "\n" << endl;
     }
+    
+/*
+--------------------find MAX--------------------
+*/
+    int max = s[0].avg;
+    for (i = 0; i < n; i++){
+        if (s[i].avg > max){
+            max = s[i].avg;
+        }
+    }
+    cout << "MAX. SCORE: " << max << "\nSTUDENT: " << endl;
+
+/*
+--------------------find MIN--------------------
+*/
+    int min = s[0].avg;
+    for (i = 0; i < n; i++){
+        if (s[i].avg < min){
+            min = s[i].avg;
+        }
+    }
+    cout << "\nMIN. SCORE: " << min << "\nSTUDENT: " << endl;
+    
+
     cout << "\n\n";
     fclose(input);
 }
 
+/*
+void doAverage(){
+}
 
- void sortFile(){
- 
- }
+void doSorting(){
+    
+}
 
 void printResults(){
     // result: students who got the highest and lowest score.
@@ -64,7 +96,8 @@ void printResults(){
     // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
     cout << "Sort by Avg. (from the highest to the lowest): " << endl;
     cout << "#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(8) << "AVG.\n" << endl;
- }
+}
+*/
 
 #endif /* process_h */
 
