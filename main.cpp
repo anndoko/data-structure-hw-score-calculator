@@ -16,9 +16,11 @@
 #include "process.h"
 #include "student.h"
 void readFile();
+void printResults();
 
 int main() {
     readFile();
+    printResults();
     return 0;
 }
 

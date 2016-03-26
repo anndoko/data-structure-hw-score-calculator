@@ -43,24 +43,28 @@ void readFile(){
         // average
         s[i].avg = (s[i].score1 + s[i].score1 + s[i].score1) / 3;
         
-        // print result
+        // print results
         cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(8) << s[i].avg << "\n" << endl;
     }
     cout << "\n\n";
     fclose(input);
-    system("PAUSE");
 }
 
 
-/*
  void sortFile(){
  
  }
- 
- void printFile(){
- 
+
+void printResults(){
+    // result: students who got the highest and lowest score.
+    cout << "The Highest Score: " << endl;
+    cout << "The Lowest Score: " << endl;
+    
+    // result: sort
+    // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
+    cout << "Sort by Avg. (from the highest to the lowest): " << endl;
+    cout << "#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(8) << "AVG.\n" << endl;
  }
- */
 
 #endif /* process_h */
 
