@@ -37,8 +37,8 @@ void readFile(){
     }
     
     // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
-    cout << "#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(8) << "AVG.\n" << endl;
-
+    cout << "#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(8) << "AVG." << endl;
+    cout << "-----------------------------------------------------" << endl;
     
     for (i = 0; i < n; i++)
     {
@@ -49,30 +49,35 @@ void readFile(){
         s[i].avg = (s[i].score1 + s[i].score1 + s[i].score1) / 3;
 
         // print results
-        cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(8) << s[i].avg << "\n" << endl;
+        cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(8) << s[i].avg << endl;
+        cout << "-----------------------------------------------------" << endl;
     }
     
 /*
 --------------------find MAX--------------------
 */
     int max = s[0].avg;
+    string  max_stu;
     for (i = 0; i < n; i++){
         if (s[i].avg > max){
             max = s[i].avg;
+            max_stu = s[i].name;
         }
     }
-    cout << "MAX. SCORE: " << max << "\nSTUDENT: " << endl;
+    cout << "\nMAX. SCORE: " << max << "\nSTUDENT: " << max_stu << endl;
 
 /*
 --------------------find MIN--------------------
 */
     int min = s[0].avg;
+    string  min_stu;
     for (i = 0; i < n; i++){
         if (s[i].avg < min){
             min = s[i].avg;
+            min_stu = s[i].name;
         }
     }
-    cout << "\nMIN. SCORE: " << min << "\nSTUDENT: " << endl;
+    cout << "\nMIN. SCORE: " << min << "\nSTUDENT: " << min_stu << endl;
     
 
     cout << "\n\n";
