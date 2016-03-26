@@ -17,7 +17,7 @@ struct student{
     int score1;
     int score2;
     int score3;
-    //float avg; //average
+    float avg; // avg: average
 };
 
 #endif /* student_h */

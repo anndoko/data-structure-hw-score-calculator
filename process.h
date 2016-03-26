@@ -32,13 +32,20 @@ void readFile(){
     }
     for (i = 0; i < n; i++)
     {
+        // input from a txt. file
         fscanf (input, "%79s %d %d %d %d", s[i].name, &s[i].age, &s[i].score1, &s[i].score2, &s[i].score3);
-        cout << i+1 << "  " << s[i].name << setw(4) << s[i].age << setw(4) << s[i].score1 << setw(4) << s[i].score2 << setw(4) << s[i].score3 << endl;
+        
+        // average
+        s[i].avg = (s[i].score1 + s[i].score1 + s[i].score1) / 3;
+        
+        // print result
+        cout << i+1 << "  " << s[i].name << setw(4) << s[i].age << setw(4) << s[i].score1 << setw(4) << s[i].score2 << setw(4) << s[i].score3 << setw(4) << s[i].avg << endl;
     }
     cout << "\n\n";
     fclose(input);
     system("PAUSE");
 }
+
 
 /*
  void sortFile(){
