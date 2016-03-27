@@ -15,15 +15,9 @@
 #include <iostream>
 #include "process.h"
 #include "student.h"
-void readFile();
-// void doAverage();
-// void doSorting();
-// void printResults();
+void process();
 
 int main() {
-    readFile();
-    // doAverage();
-    // doSorting();
-    //printResults();
+    process();
     return 0;
 }
