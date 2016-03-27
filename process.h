@@ -20,20 +20,20 @@ void process(){
     
     int i, n;
     
-    cout << "Number of student: "; // prompt
+    cout << "Number of students: "; // prompt
     cin >> n; // n: number of students
     cout << "\n" << endl;
     
     struct student *s;
     s = new struct student[n];
-
-/*
---------------------READ FILE--------------------
-*/
-
+    
+    /*
+     --------------------READ FILE--------------------
+     */
+    
     FILE *input;
     input = fopen ("list2.txt", "r");
-
+    
     // error message
     if (input == NULL)
     {
@@ -41,14 +41,13 @@ void process(){
     }
     
     // input from a txt. file
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++){
         fscanf (input, "%79s %d %d %d %d", s[i].name, &s[i].age, &s[i].score1, &s[i].score2, &s[i].score3);
-       }
+    }
     
-/*
---------------------AVG.--------------------
-*/
+    /*
+     --------------------AVG.--------------------
+     */
     
     for (i = 0; i < n; i++)
     {
@@ -57,9 +56,9 @@ void process(){
     }
     
     
-/*
---------------------print--------------------
-*/
+    /*
+     --------------------print--------------------
+     */
     cout << "* DATA:\n\n";
     
     // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
@@ -72,9 +71,9 @@ void process(){
         cout << "----------------------------------------------------------------------" << endl;
     }
     
-/*
---------------------find MAX--------------------
-*/
+    /*
+     --------------------find MAX--------------------
+     */
     
     int max = s[0].avg;
     string  max_stu;
@@ -87,10 +86,10 @@ void process(){
     
     cout << "\n\nTHE HIGHEST SCORE: " << max << endl;
     cout << "Student with the highest score: " << max_stu << endl;
-
-/*
---------------------find MIN--------------------
-*/
+    
+    /*
+     --------------------find MIN--------------------
+     */
     
     int min = s[0].avg;
     string  min_stu;
@@ -103,10 +102,10 @@ void process(){
     cout << "\nTHE LOWEST SCORE: " << min << endl;
     cout << "Student with the lowest score: " << min_stu << "\n\n" << endl;
     
-/*
---------------------Bubble Sort--------------------
-*/
-
+    /*
+     --------------------Bubble Sort--------------------
+     */
+    
     int j;
     struct student temp;
     
@@ -122,7 +121,7 @@ void process(){
             }
         }
     }
-
+    
     cout << "* DATA SORT BY AVERAGE (DESCENDING ORDER):\n\n";
     
     // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
@@ -135,13 +134,12 @@ void process(){
         cout << "----------------------------------------------------------------------" << endl;
     }
     
-/*
---------------------END--------------------
-*/
-
+    /*
+     --------------------END--------------------
+     */
+    
     cout << "\n\n";
     fclose(input);
 }
 
 #endif /* process_h */
-

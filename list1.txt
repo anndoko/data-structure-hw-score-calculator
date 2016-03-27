@@ -1,0 +1,11 @@
+10
+John 	24  
+Peter 	22 	
+Mary  	21 
+Helen 	22 	
+Michael 20      
+Mike    21	
+Ashley  20     
+Aaron 	21
+Amy	20 	
+Minnie  21     
