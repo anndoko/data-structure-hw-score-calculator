@@ -22,6 +22,7 @@ void process(){
     
     cout << "Number of student: "; // prompt
     cin >> n; // n: number of students
+    cout << "\n" << endl;
     
     struct student *s;
     s = new struct student[n];
@@ -55,14 +56,20 @@ void process(){
         s[i].avg = avg;
     }
     
+    
+/*
+--------------------print--------------------
+*/
+    cout << "* DATA:\n\n";
+    
     // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
-    cout << "\n\n#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(12) << "AVG." << endl;
-    cout << "----------------------------------------------------------" << endl;
+    cout << setw(5) << "INDEX" << setw(12) << "NAME" << setw(10) << "AGE"<< setw(10) << "SCORE1" << setw(10) << "SCORE2" << setw(10) << "SCORE3" << setw(12) << "AVG." << endl;
+    cout << "----------------------------------------------------------------------" << endl;
     
     // print results
     for (i = 0; i < n; i++){
-        cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(12) << s[i].avg << endl;
-        cout << "----------------------------------------------------------" << endl;
+        cout << setw(5) << i+1 << setw(12) << s[i].name << setw(10) << s[i].age << setw(10) << s[i].score1 << setw(10) << s[i].score2 << setw(10) << s[i].score3 << setw(12) << setprecision(4) << s[i].avg << endl;
+        cout << "----------------------------------------------------------------------" << endl;
     }
     
 /*
@@ -78,8 +85,9 @@ void process(){
         }
     }
     
-    cout << "\nTHE HIGHEST SCORE: " << max << endl;
+    cout << "\n\nTHE HIGHEST SCORE: " << max << endl;
     cout << "Student with the highest score: " << max_stu << endl;
+
 /*
 --------------------find MIN--------------------
 */
@@ -93,7 +101,7 @@ void process(){
         }
     }
     cout << "\nTHE LOWEST SCORE: " << min << endl;
-    cout << "Student with the lowest score: " << min_stu << endl;
+    cout << "Student with the lowest score: " << min_stu << "\n\n" << endl;
     
 /*
 --------------------Bubble Sort--------------------
@@ -115,14 +123,16 @@ void process(){
         }
     }
 
+    cout << "* DATA SORT BY AVERAGE (DESCENDING ORDER):\n\n";
+    
     // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
-    cout << "\n\n#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(12) << "AVG." << endl;
-    cout << "----------------------------------------------------------" << endl;
+    cout << setw(5) << "INDEX" << setw(12) << "NAME" << setw(10) << "AGE"<< setw(10) << "SCORE1" << setw(10) << "SCORE2" << setw(10) << "SCORE3" << setw(12) << "AVG." << endl;
+    cout << "----------------------------------------------------------------------" << endl;
     
     // print results
     for (i = 0; i < n; i++){
-        cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(12) << s[i].avg << endl;
-        cout << "----------------------------------------------------------" << endl;
+        cout << setw(5) << i+1 << setw(12) << s[i].name << setw(10) << s[i].age << setw(10) << s[i].score1 << setw(10) << s[i].score2 << setw(10) << s[i].score3 << setw(12) << setprecision(4) << s[i].avg << endl;
+        cout << "----------------------------------------------------------------------" << endl;
     }
     
 /*
