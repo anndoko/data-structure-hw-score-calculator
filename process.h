@@ -16,7 +16,7 @@
 #define process_h
 using namespace std;
 
-void readFile(){
+void process(){
     
     int i, n;
     
@@ -48,6 +48,7 @@ void readFile(){
 /*
 --------------------AVG.--------------------
 */
+    
     for (i = 0; i < n; i++)
     {
         double avg = (s[i].score1 + s[i].score2 + s[i].score3) / 3.0;
@@ -76,8 +77,9 @@ void readFile(){
             max_stu = s[i].name;
         }
     }
-    cout << "\nMAX. SCORE: " << max << "\nSTUDENT: " << max_stu << endl;
     
+    cout << "\nTHE HIGHEST SCORE: " << max << endl;
+    cout << "Student with the highest score: " << max_stu << endl;
 /*
 --------------------find MIN--------------------
 */
@@ -90,11 +92,43 @@ void readFile(){
             min_stu = s[i].name;
         }
     }
-    cout << "\nMIN. SCORE: " << min << "\nSTUDENT: " << min_stu << endl;
+    cout << "\nTHE LOWEST SCORE: " << min << endl;
+    cout << "Student with the lowest score: " << min_stu << endl;
     
 /*
 --------------------Bubble Sort--------------------
 */
+
+    int j;
+    struct student temp;
+    
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = 0; j < n - 1 - i; j++)
+        {
+            if (s[j].avg < s[j + 1].avg)
+            {
+                temp = s[j];
+                s[j] = s[j + 1];
+                s[j + 1] = temp;
+            }
+        }
+    }
+
+    // name the columns: #, NAME, AGE, SCORE1, SCORE2, SCORE3, AVG.
+    cout << "\n\n#" << setw(12) << "NAME" << setw(8) << "AGE"<< setw(8) << "SCORE1" << setw(8) << "SCORE2" << setw(8) << "SCORE3" << setw(12) << "AVG." << endl;
+    cout << "----------------------------------------------------------" << endl;
+    
+    // print results
+    for (i = 0; i < n; i++){
+        cout << i+1 << setw(12) << s[i].name << setw(8) << s[i].age << setw(8) << s[i].score1 << setw(8) << s[i].score2 << setw(8) << s[i].score3 << setw(12) << s[i].avg << endl;
+        cout << "----------------------------------------------------------" << endl;
+    }
+    
+/*
+--------------------END--------------------
+*/
+
     cout << "\n\n";
     fclose(input);
 }
