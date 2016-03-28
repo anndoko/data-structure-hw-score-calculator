@@ -31,18 +31,19 @@ void process(){
      --------------------READ FILE--------------------
      */
     
-    FILE *input;
-    input = fopen ("list2.txt", "r");
+    ifstream fin;
+    fin.open ("/Users/Anndo/Desktop/NTUST_DataStructure/00-1 homework/DataStructure_homework2_1/ScoreCalculator/list2.txt");
     
     // error message
-    if (input == NULL)
+    if (!fin)
     {
         cout << "Failed to open the file.\n";
     }
     
     // input from a txt. file
-    for (i = 0; i < n; i++){
-        fscanf (input, "%79s %d %d %d %d", s[i].name, &s[i].age, &s[i].score1, &s[i].score2, &s[i].score3);
+    for (i = 0; i < n; i++)
+    {
+        fin >> s[i].name >> s[i].age >> s[i].score1 >> s[i].score2 >> s[i].score3;
     }
     
     /*
@@ -139,7 +140,7 @@ void process(){
      */
     
     cout << "\n\n";
-    fclose(input);
+    fin.close();
 }
 
 #endif /* process_h */
