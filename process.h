@@ -76,7 +76,7 @@ void process(){
      --------------------find MAX--------------------
      */
     
-    int max = s[0].avg;
+    double max = s[0].avg;
     string  max_stu;
     for (i = 0; i < n; i++){
         if (s[i].avg > max){
@@ -92,7 +92,7 @@ void process(){
      --------------------find MIN--------------------
      */
     
-    int min = s[0].avg;
+    double min = s[0].avg;
     string  min_stu;
     for (i = 0; i < n; i++){
         if (s[i].avg < min){
