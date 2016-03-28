@@ -32,7 +32,7 @@ void process(){
      */
     
     ifstream fin;
-    fin.open ("/Users/Anndo/Desktop/NTUST_DataStructure/00-1 homework/DataStructure_homework2_1/ScoreCalculator/list2.txt");
+    fin.open ("list2.txt");
     
     // error message
     if (!fin)
